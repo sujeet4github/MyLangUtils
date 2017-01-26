@@ -1,7 +1,7 @@
 Source:
-http://my.safaribooksonline.com/video/programming/ruby/9780134175416
-Code at: https://github.com/samphippen/efrll
-by [Sam Phippen](https://github.com/samphippen)
+- [Safari Book Video](http://my.safaribooksonline.com/video/programming/ruby/9780134175416)
+- by [Sam Phippen](https://github.com/samphippen)
+- Code at: [Sam Phippen github](https://github.com/samphippen/efrll)
 
 #1 - Arrays And Hashes
 ##1
