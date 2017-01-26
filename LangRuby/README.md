@@ -14,6 +14,7 @@ Uses CSV module
 
 ## Folder: guvnor_src_parser
 - uses require_relative to require local module
+- classes
 - file and directory processing
 - parsing text
 
