@@ -18,9 +18,16 @@ Uses CSV module
 - file and directory processing
 - parsing text
 
+### erep_utils
+- parsing log file to locate interesting stuff
+- connecting to mongo
+
 ##Gems installed:
-###1
+###1 benchmark-bigo
 ```
+# make sure rubygems is current
+gem update --system
+#
 gem install benchmark-bigo
 ```
 for effective ruby lessons - 01_Arrays_and_Hashes - 02 Set
@@ -29,3 +36,22 @@ for effective ruby lessons - 01_Arrays_and_Hashes - 02 Set
  #at 1000C:/S/opt/DevEnv/Ruby23-x64/lib/ruby/gems/2.3.0/gems/benchmark-bigo-1.0.0/lib/benchmark/bigo/report.rb:14:in `add_entry': wrong number of arguments (given 5, expected 6) (ArgumentError)
 ```
 
+###2 mongo and bson_ext (along with devkit)
+```
+# make sure rubygems is current
+gem update --system
+```
+
+Installing Mongo needs Ruby DevKit
+* http://jekyll-windows.juthilo.com/1-ruby-and-devkit/
+* https://github.com/oneclick/rubyinstaller/wiki/Development-Kit
+* Download file DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe from http://rubyinstaller.org/downloads/
+* Install in <ruby-install-folder>\RubyDevKit
+* Follow instructions to integrate with Ruby
+
+```
+# install rubygem
+gem install mongo
+# the bson gem will be installed correctly, but for performance use bson_ext
+gem install bson_ext
+```
