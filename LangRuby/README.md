@@ -12,6 +12,11 @@ Uses CSV module
 3. track duplicates using hash
 4. Write duplicates out to a file
 
+## Folder: guvnor_src_parser
+- uses require_relative to require local module
+- file and directory processing
+- parsing text
+
 ##Gems installed:
 ###1
 ```
