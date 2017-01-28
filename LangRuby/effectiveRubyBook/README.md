@@ -22,14 +22,19 @@ Use Hash#fetch over Hash#[]
 prefer decorating collections instead of inheriting from collection classes
 
 #2 - Seams
+
 ##6
 Avoid using class variables
+  class variables ==> static variables
 
 ##7
 Avoid using class methods
+  class methods ==> static methods
 
 ##8
 Obey the law of Demeter
+	should not call methods on nested objects available to you
+	 exception for self or objects of same type
 
 ##9
 Prefer methods over instance variables
