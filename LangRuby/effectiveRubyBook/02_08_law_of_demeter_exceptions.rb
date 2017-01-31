@@ -1,6 +1,7 @@
 items = [1,2,3,4,5]
 
-# Does not Fail Law of Demeter, but complex and difficult to read
+# Does not Fail Law of Demeter, since we are not invoking methods on nested objects
+# but complex and difficult to read
 p items
 		.map { |i| i+1 }
 		.select { |i| i.even? }

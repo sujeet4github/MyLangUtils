@@ -16,7 +16,7 @@ j = Job.new(Address.new(City.new(Weather.new("Cloudy"))))
 p j.weather
 
 
-# To comply with law of Demeter use delegation
+# To comply with law of Demeter, refactor via delegation
 
 City2 = Struct.new(:weatherValue) do
 	def weather
