@@ -41,9 +41,18 @@ Prefer methods over instance variables
 
 ##10
 Prefer methods over constants
+	constants:
+		- are shared, global
+		- mutable if the constant is a collection
+		- cannot be replaced by behavior later
 
 ##11
 Use the === protocol for matching tasks
+	universal *match* protocol
+	supported for:
+		classes (subclass), regex (matches), ranges (part of range),
+		lambda (calls lambda for custom implementation)
+	
 
 #3 - Testing
 ##12
