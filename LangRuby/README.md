@@ -55,3 +55,12 @@ gem install mongo
 # the bson gem will be installed correctly, but for performance use bson_ext
 gem install bson_ext
 ```
+
+###3 rspec
+```
+for effective ruby lessons - "#3 - Testing"
+```
+
+```
+gem install rspec
+```
