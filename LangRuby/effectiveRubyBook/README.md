@@ -4,6 +4,7 @@ Source:
 - Code at: [Sam Phippen github](https://github.com/samphippen/efrll)
 
 #1 - Arrays And Hashes
+-------------------------------------------------------
 ##1
 Duplicate collections you receive as arguments
 or encapsulated collections or parts there of you want to expose
@@ -21,8 +22,9 @@ Use Hash#fetch over Hash#[]
 ##5
 prefer decorating collections instead of inheriting from collection classes
 
+=======================================================
 #2 - Seams
-
+-------------------------------------------------------
 ##6
 Avoid using class variables
   class variables ==> static variables
@@ -53,8 +55,9 @@ Use the === protocol for matching tasks
 		classes (subclass), regex (matches), ranges (part of range),
 		lambda (calls lambda for custom implementation)
 	
-
+=======================================================
 #3 - Testing
+-------------------------------------------------------
 ##12
 Use only one assertion or expectation per test
 
@@ -69,8 +72,13 @@ Prefer spies to mocks or stubs
 
 ##16
 Use Rack::Test for integration testing
+	rails, sinatra are rack based
+	Rack::Test - test web apps without making network requests - faster
+	Rack::Test has adapters - faraday, rails
 
+=======================================================
 #4 - Enumerables and Callables
+-------------------------------------------------------
 ##17
 Prefer Enumerable methods
 ###17.1
@@ -96,7 +104,9 @@ Use #method to pass instance methods as callables
 ##21
 Use {} for blocks that return and do..end for blocks that mutate
 
+=======================================================
 #5 - The Standard Library
+-------------------------------------------------------
 ##22
 Use block forms for IO
 
@@ -114,3 +124,5 @@ Use #absolute_path, #dirname, and __FILE__ to be OS independent
 Use File.extname to determine file type
 ###25.3
 Use File.join to build file paths safely
+
+=======================================================

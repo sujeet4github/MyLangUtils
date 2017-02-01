@@ -1,0 +1,3 @@
+see https://github.com/samphippen/efrll/tree/master/3_testing/5_rack_test/sample_rails_app
+
+Too complicated to have here...
