@@ -1,10 +1,12 @@
 require "set"
 
+##17 - Prefer Enumerable methods
 # Enumerable - is a mixin in standard library
 #  number of standard traversable methods
 # 
 
 # ===============================================
+###17.1 - Use zip and each_with_index
 # zip
 p [1,2,3].zip([2,3,4])
 
@@ -87,7 +89,7 @@ end
 
 p "==========="
 # ===============================================
-# each_slice, each_con
+###17.2 Use each_slice and each_con
 p "each_slice: for grouping elements from an enumerable, lazy"
 
 a = [1,2,3,4,5,6,7,8]
@@ -125,6 +127,7 @@ p h.each_cons(2).to_a
 
 p "==========="
 # ===============================================
+###17.3 - Use partition, select and find
 # partition, select, reject, find
 # - finding items in a Enumerable
 # - predicate blocks are passed to these
@@ -210,3 +213,118 @@ p "---------------"
 p "works on hashes"
 p h.find { |key, value| key == :a }
 p h.find { |key, value| value == 3 }
+
+p "==========="
+# ===============================================
+###17.4 - Use group_by, reduce and each_with_object
+#
+# group_by, reduce, each_with_object
+#  - transforms a collection into other collections/values
+#  - real-life ruby - common use is to produce a hash from the collection
+#  - block can return any value
+p "group_by always produces a hash:"
+p " - keys are the results of the predicate"
+p " - values was the value sent into the predicte"
+a = [1,2,3,4,5,6,7]
+p a.group_by { |x| x % 3 }
+p a.group_by { |x| x.even? }
+p "---------------"
+s = Set.new(["some words", "different words", "some other words"])
+p s.group_by { |x| x.split(" ").first }
+p s.group_by { |x| x.split(" ").count }
+p "---------------"
+p "reduce takes a initial/default accumulator value and a block"
+# "add up array"
+p a.reduce(:+)
+# "add up array, starting with 3"
+p a.reduce(3, :+)
+# "add up array, starting with 3, same as the above statement"
+p a.reduce(3, &:+)
+p "---------------"
+a = ["some", "strings", "some", "more", "strings"]
+p a.reduce(Hash.new(0)) { |accumulator, value|
+  accumulator[value] += 1
+  accumulator
+}
+p "---------------"
+p a.each_with_index.reduce(Hash.new { |h,k| h[k] = [] }) { |accumulator, value_and_index|
+  value,index = value_and_index
+  accumulator[value] << index
+  accumulator
+}
+p "---------------"
+a = [1,2,3,4,5,6]
+p "implementing select using reduce"
+p a.reduce([]) { |accumulator, value|
+  if value.even?
+    accumulator << value
+  end
+
+  accumulator
+}
+p "---------------"
+p "each_with_object takes a mutable object and a block, the idea is the block modifies the object, and this object is returned after iterating through the collection"
+result = a.each_with_object(0) do |item, object|
+  object += item
+end
+p "result is always 0, because the object passed - integer with value 0 is not mutable"
+p result
+p "---------------"
+class Counter
+  def increment(n)
+    @count ||= 0
+    @count += n
+  end
+
+  def count
+    @count
+  end
+end
+result = a.each_with_object(Counter.new) do |item, object|
+  object.increment(item)
+end
+p result.count
+p "---------------"
+s = ["some", "strings", "some", "more", "strings"]
+result = s.each_with_object(Hash.new(0)) do |item, object|
+  object[item] += 1
+  #no accumulator return unlike reduce
+end
+p result
+
+p "---------------"
+###17.5 - Implement your own enumerable
+p "simple example"
+class StaticCollection
+  include Enumerable
+
+  def each(&blk)
+    blk.call(1)
+    blk.call(2)
+    blk.call(3)
+  end
+end
+
+StaticCollection.new.each do |item|
+  p item
+end
+
+
+p "----------"
+p StaticCollection.new.select {|x| x.even? }
+p StaticCollection.new.reduce(:+)
+p "----------"
+
+class DynamicCollection
+  include Enumerable
+  
+  def each(&blk)
+    10.times do
+      blk.call(rand)
+      #could be file io, network, etc
+      sleep(rand*0.1)
+    end
+  end
+end
+p DynamicCollection.new.reduce(:+)
+p DynamicCollection.new.select { |x| x < 0.99 }
