@@ -57,10 +57,26 @@ gem install bson_ext
 ```
 
 ###3 rspec
-```
 for effective ruby lessons - "#3 - Testing"
-```
 
 ```
 gem install rspec
 ```
+
+###4 bundler
+http://bundler.io/bundle_install.html
+```
+gem install bundler
+```
+
+{{ These are locally within effectiveRubyBook/03_16_webapp_testing folder
+
+setup in Gemfile.
+bundle install --clean --frozen
+
+###5 sinatra - web app framework, lightweight compared to Rails
+for effective ruby lessons - "#3 - Testing, ##16 - Use rack::test for integration testing"
+###6 faraday adapter for rack::test
+###7 rack::test - testing web app frameworks based on rack
+}}
+
