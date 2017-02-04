@@ -6,7 +6,7 @@ Source:
 #1 - Arrays And Hashes
 -------------------------------------------------------
 ##1
-Duplicate collections you receive as arguments
+Duplicate (.dup) collections you receive as arguments
 or encapsulated collections or parts there of you want to expose
 (see RandomMatrix in 01_01.rb)
 
@@ -14,7 +14,7 @@ or encapsulated collections or parts there of you want to expose
 Use Set for efficient presence checks
 
 ##3
-Consider using a default hash value
+Consider using a default hash value in hashes(maps/dictionaries)
 
 ##4
 Use Hash#fetch over Hash#[]
@@ -91,15 +91,25 @@ Use partition, select and find
 Use group_by, reduce and each_with_object
 ###17.5
 Implement your own enumerable
+	standard library module Enumerable - to be included/extended by any class/object
+	reqires implementation of #each(&block) which calls the block with each
+		successive element of the collection
 
 ##18
 Prefer lambda instead of proc
+ for anonymous callable
 
 ##19
 Use Symbol#to_proc when appropriate
+	symbol -> &
+	e.g. a.map { |i| i.even? }  is equivalent to a.map(&:even?)
+
 
 ##20
 Use #method to pass instance methods as callables
+	This will not work if the class already defines a method called method
+	this is very common for http libraries
+
 
 ##21
 Use {} for blocks that return and do..end for blocks that mutate

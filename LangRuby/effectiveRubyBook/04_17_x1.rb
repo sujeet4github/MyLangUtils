@@ -296,8 +296,11 @@ p "---------------"
 ###17.5 - Implement your own enumerable
 p "simple example"
 class StaticCollection
+## 1. include Enumerable
   include Enumerable
 
+## 2. implement method each
+##   this block should be called for each successive element of the collection
   def each(&blk)
     blk.call(1)
     blk.call(2)
@@ -308,16 +311,16 @@ end
 StaticCollection.new.each do |item|
   p item
 end
-
-
 p "----------"
+p "including Enumerable helps us get access to methods like select ,reduce
 p StaticCollection.new.select {|x| x.even? }
 p StaticCollection.new.reduce(:+)
 p "----------"
 
 class DynamicCollection
+## 1.
   include Enumerable
-  
+## 2.  
   def each(&blk)
     10.times do
       blk.call(rand)
