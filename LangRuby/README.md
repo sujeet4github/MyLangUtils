@@ -1,5 +1,7 @@
 #About Ruby
 
+## TODO: evaluate and see if needs new folder: https://github.com/davidgf/design-patterns-in-ruby
+
 ## Folder: Effective Ruby Book
 ./effectiveRubyBook
 
