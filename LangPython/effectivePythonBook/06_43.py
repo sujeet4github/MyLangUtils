@@ -63,7 +63,8 @@ with open('my_output.txt', 'w') as handle:
     handle.write('This is some data!')
 
 
-# Example 8 - the context manager here yieds a value that can be used just as (file) handle is being used in Example 7
+# Example 8 - the context manager here yields a value that can be used just as
+# (file) handle is being used in Example 7
 @contextmanager
 def log_level(level, name):
     logger = logging.getLogger(name)
