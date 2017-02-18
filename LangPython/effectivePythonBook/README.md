@@ -162,30 +162,52 @@ Python has facilities for adapting to multiple deployment environments. It also 
 ## Lesson 3 - Using Functions
 -------------------------------------------------------
 
-- 15 Know How Closures Interact with Variable Scope
-- 23 Accept Functions for Simple Interfaces Instead of Classes
-- 18 Reduce Visual Noise with Variable Positional Arguments
-- 19 Provide Optional Behavior with Keyword Arguments
-- 21 Enforce Clarity with Keyword-Only Arguments
-- 20 Use None and Docstrings to Specify Dynamic Default Arguments
+13. 15 Know How Closures Interact with Variable Scope
+
+14. 23 Accept Functions for Simple Interfaces Instead of Classes
+
+15. 18 Reduce Visual Noise with Variable Positional Arguments
+
+16. 19 Provide Optional Behavior with Keyword Arguments
+	- can specify default values for arguments.
+	- makes calling code more readable
+
+17. 21 Enforce Clarity with Keyword-Only Arguments
+
+18. 20 Use None and Docstrings to Specify Dynamic Default Arguments
 
 =======================================================
 ## Lesson 4 - Using Classes
 -------------------------------------------------------
 
-- 22 Prefer Helper Classes Over Bookkeeping with Dictionaries and Tuples
-- 29 Use Plain Attributes Instead of Get and Set Methods
-- 27 Prefer Public Attributes Over Private Ones
-- 24 Use @classmethod Polymorphism to Construct Objects Generically
+19. 22 Prefer Helper Classes Over Bookkeeping with Dictionaries and Tuples
+
+20. 29 Use Plain Attributes Instead of Get and Set Methods
+
+21. 27 Prefer Public Attributes Over Private Ones
+	- Python only has public and private
+	- private is more a guideline, not a real compiler protection
+	- pepe style guide: (again guidelines, not enforced)
+	 - __private_field
+	 - _protected_field (for access by subclasses)
+	 - public_field
+
+22. 24 Use @classmethod Polymorphism to Construct Objects Generically
 
 =======================================================
 ## Lesson 5 - Working with Concurrency and Parallelism
 -------------------------------------------------------
 
-- 36 Use subprocess to Manage Child Processes
-- 37 Use Threads for Blocking I/O, Avoid for Parallelism
-- 38 Use Lock to Prevent Data Races in Threads
-- 39 Use Queue to Coordinate Work Between Threads
+23. 36 Use subprocess to Manage Child Processes
+
+24. 37 Use Threads for Blocking I/O, Avoid for Parallelism
+	- global interpreter lock
+	 - python does not let multiple threads run in parallel unless it is IO blocked
+
+25. 38 Use Lock to Prevent Data Races in Threads
+	- use this, dont depend on the global interpreter lock
+
+26. 39 Use Queue to Coordinate Work Between Threads
 - 41 Consider concurrent.futures for True Parallelism
 
 =======================================================
