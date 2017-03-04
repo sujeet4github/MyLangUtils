@@ -171,6 +171,8 @@ print('Producer waiting')
 in_queue.join()                # Done fourth
 print('Producer done')
 
+# Writing Helper Classes to help you write to queues
+#
 
 # Example 17
 class ClosableQueue(Queue):
@@ -193,6 +195,7 @@ class ClosableQueue(Queue):
 
 
 # Example 19
+# support for pipelining (out_queue of one can be in_queue of another)
 class StoppableWorker(Thread):
     def __init__(self, func, in_queue, out_queue):
         super().__init__()

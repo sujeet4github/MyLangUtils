@@ -203,12 +203,14 @@ Python has facilities for adapting to multiple deployment environments. It also 
 24. 37 Use Threads for Blocking I/O, Avoid for Parallelism
 	- global interpreter lock
 	 - python does not let multiple threads run in parallel unless it is IO blocked
+	- for true parallelism see item 27/41 below
 
 25. 38 Use Lock to Prevent Data Races in Threads
 	- use this, dont depend on the global interpreter lock
 
 26. 39 Use Queue to Coordinate Work Between Threads
-- 41 Consider concurrent.futures for True Parallelism
+
+27. 41 Consider concurrent.futures for True Parallelism
 
 =======================================================
 ## Lesson 6 - Making Programs Robust
