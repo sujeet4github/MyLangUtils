@@ -35,7 +35,11 @@ pool = ThreadPoolExecutor(max_workers=2)
 results = list(pool.map(gcd, numbers))
 end = time()
 print('Took %.3f seconds' % (end - start))
+# Same time as above, since because of Global Interpreter Lock, threads
+# cannot achieve true parallelism.
 
+# To do true parallelism do the following
+#
 
 # Example 4
 from concurrent.futures import ProcessPoolExecutor
@@ -45,3 +49,9 @@ pool = ProcessPoolExecutor(max_workers=2)  # The one change
 results = list(pool.map(gcd, numbers))
 end = time()
 print('Took %.3f seconds' % (end - start))
+
+# This creates a child python interpreter process that is a child of the making
+# interpreter process.
+# Data serialization (using pickle module)
+#  and transfer happens between these processes.
+#

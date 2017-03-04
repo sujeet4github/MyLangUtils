@@ -211,15 +211,23 @@ Python has facilities for adapting to multiple deployment environments. It also 
 26. 39 Use Queue to Coordinate Work Between Threads
 
 27. 41 Consider concurrent.futures for True Parallelism
+	- by passes the global interpreter lock by creating a child process :-)
+	- This creates a child python interpreter process that is a child of the
+	   main interpreter process.
+	- Data serialization (using pickle module) and transfer
+		happens between these processes.
+	- when to use this?
+		- functions are isolated => dont share state - to reduce the data transfer
+		- functions are high leveraged => small amt of data -> large amt of computation
 
 =======================================================
 ## Lesson 6 - Making Programs Robust
 -------------------------------------------------------
 
-- 53 Use Virtual Environments for Isolated and Reproducible Dependencies
-- 56 Test Everything with unittest
-- 57 Consider Interactive Debugging with pdb
-- 58 Profile Before Optimizing
-- 59 Use tracemalloc to Understand Memory Usage and Leaks
+28. 53 Use Virtual Environments for Isolated and Reproducible Dependencies
+29. 56 Test Everything with unittest
+30. 57 Consider Interactive Debugging with pdb
+31. 58 Profile Before Optimizing
+32. 59 Use tracemalloc to Understand Memory Usage and Leaks
 
 =======================================================
