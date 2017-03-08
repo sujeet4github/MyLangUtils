@@ -225,6 +225,22 @@ Python has facilities for adapting to multiple deployment environments. It also 
 -------------------------------------------------------
 
 28. 53 Use Virtual Environments for Isolated and Reproducible Dependencies
+	- pyenv <folder> ... source bin/activate to activate the virtual env
+	- how to reproduce an env?
+	  - this puts out libraries with versions on to a text file
+		```pip3 freeze > requirements.txt```
+		- this file can be checked in...
+		- when recreating...
+		```
+		pyenv otherproject
+		cd other project
+		source bin/activate
+		pip3 list
+		pip3 install -r requirements.txt
+		pip3 list
+		```
+	- how to upgrade python within this env?
+
 29. 56 Test Everything with unittest
 30. 57 Consider Interactive Debugging with pdb
 31. 58 Profile Before Optimizing
