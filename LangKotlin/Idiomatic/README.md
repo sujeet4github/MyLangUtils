@@ -14,6 +14,25 @@ The extension function apply() helps to group and centralize initialization code
 
 See Apply.kt
 
+## Dont overload for Default Arguments (method or constructor chaining)
+
+See DefaultArgs.kt
+
+## Destructuring
+
+See Destructuring.kt
+
+## Functional Programming
+In contrast to Java 8, Kotlin has way better support for functional programming:
+
+    Immutability: val for variables and properties, immutable data classes, copy()
+    Expressions: Single expression functions. if, when and try-catch are expressions. We can combine these control structures with other expressions concisely.
+    Function Types
+    Concise Lambda Expressions
+    Kotlin’s Collection API
+
+See FunctionalProgramming.kt
+
 
 # Kotlin’s Built-in Support for Common Java Idioms and Patterns
 
@@ -31,12 +50,3 @@ Fortunately, many patterns are built-in right into Kotlin’s language or its stan
 |Delegation				| Delegated properties by
 |Lazy Initialization (thread-safe)	| Delegated properties by: lazy()
 |Observer 				| Delegated properties by: Delegates.observable()
-
-# Functional Programming
-In contrast to Java 8, Kotlin has way better support for functional programming:
-
-    Immutability: val for variables and properties, immutable data classes, copy()
-    Expressions: Single expression functions. if, when and try-catch are expressions. We can combine these control structures with other expressions concisely.
-    Function Types
-    Concise Lambda Expressions
-    Kotlin’s Collection API
