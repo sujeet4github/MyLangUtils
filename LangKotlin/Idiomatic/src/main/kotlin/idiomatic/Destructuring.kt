@@ -13,6 +13,7 @@ fun createServiceConfig(): ServiceConfig {
 }
 
 fun bla(){
+    // Destructuring in action
     val (host, port) = createServiceConfig()
 }
 
