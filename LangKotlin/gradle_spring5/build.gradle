@@ -1,0 +1,57 @@
+buildscript {
+
+    ext.kotlin_version = "1.1.4-3"
+    ext.spring_boot_version = '1.5.4.RELEASE'
+
+    repositories {
+        mavenCentral()
+        maven { setUrl("https://repo.spring.io/milestone") }
+    }
+
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Required for Kotlin integration
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version" // See https://kotlinlang.org/docs/reference/compiler-plugins.html#kotlin-spring-compiler-plugin
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version")
+    }
+}
+
+apply {
+    plugin("kotlin") // Required for Kotlin integration
+    plugin("kotlin-spring")  // See https://kotlinlang.org/docs/reference/compiler-plugins.html#kotlin-spring-compiler-plugin
+    plugin("org.springframework.boot")
+}
+
+repositories {
+    mavenCentral()
+    maven { setUrl("https://repo.spring.io/milestone") }
+    maven { setUrl("https://repo.spring.io/snapshot") }
+}
+
+dependencies {
+    // kotlin dependencies
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version" // Required for Kotlin integration
+
+    // spring boot dependencies
+    compile ('org.springframework.boot:spring-boot-starter-web') {
+        exclude module: "spring-boot-starter-tomcat"
+    }
+    compile "org.springframework.boot:spring-boot-starter-jetty"
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+
+    // Jackson Dependencies
+    compile "com.fasterxml.jackson.core:jackson-annotations"
+    compile "com.fasterxml.jackson.core:jackson-core"
+    compile "com.fasterxml.jackson.core:jackson-databind"
+    runtime "com.fasterxml.jackson.datatype:jackson-datatype-jdk8"
+    runtime "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
+    runtime "com.fasterxml.jackson.module:jackson-module-kotlin"
+}
+
+//noArg {
+//    annotation("org.springframework.data.mongodb.core.mapping.Document")
+//}
+springBoot {
+    mainClass = "t.spr5.app.ApplicationKt"
+    // for another way - see Application.kt
+    // mainClass = "org.jetbrains.kotlin.demo.Application"
+}
