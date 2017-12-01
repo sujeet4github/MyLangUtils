@@ -5,10 +5,10 @@ From:
  Github:
   https://github.com/phauer/blog-related/tree/master/kotlin-idiomatic/src/main/kotlin/idiomaticKotlin
 
-# Kotlin’s Built-in Support for Common Java Idioms and Patterns
+# Kotlinï¿½s Built-in Support for Common Java Idioms and Patterns
 
 In Java, we have to write quite some boilerplate code to implemented certain idioms and patterns.
-Fortunately, many patterns are built-in right into Kotlin’s language or its standard library.
+Fortunately, many patterns are built-in right into Kotlin's language or its standard library.
 
 |Java Idiom or Pattern 			| Idiomatic Solution in Kotlin
 |Optional				| Nullable Types
@@ -35,7 +35,7 @@ In contrast to Java 8, Kotlin has way better support for functional programming:
     Expressions: Single expression functions. if, when and try-catch are expressions. We can combine these control structures with other expressions concisely.
     Function Types
     Concise Lambda Expressions
-    Kotlin’s Collection API
+    Kotlin's Collection API
 
 See FunctionalProgramming.kt
 
@@ -55,7 +55,7 @@ See NamedArgs.kt
 
 ### Use apply() for Grouping Object Initialization
 
-The extension function apply() helps to group and centralize initialization code for an object. Besides, we don’t have to repeat the variable name over and over again.
+The extension function apply() helps to group and centralize initialization code for an object. Besides, we don't have to repeat the variable name over and over again.
 
 See Apply.kt
 
@@ -94,7 +94,7 @@ See Mapping.kt
 With single expression functions and named arguments we can write easy, concise and readable mappings between objects
  see mapToDTO2 in Mapping.kt
 
-If you prefer extension functions, you can use them here to make both the function definition and the usage even shorter and more readable. At the same time, we don’t pollute our value object with the mapping logic.
+If you prefer extension functions, you can use them here to make both the function definition and the usage even shorter and more readable. At the same time, we don't pollute our value object with the mapping logic.
  see "fun SnippetEntity.toDTO()" in Mapping.kt
 
 ## Refer to Constructor Parameters in Property Initializers
@@ -107,8 +107,8 @@ Think twice before you define a constructor body (init block) only to initialize
 ## object for Stateless Interface Implementations
 
 see ObjectForStatelessFWImpls.kt
-Kotlin’s object comes in handy when we need to implement a framework interface that doesn’t have any state
- see StringToInstantConverter 
+Kotlin's object comes in handy when we need to implement a framework interface that doesn't have any state
+ see StringToInstantConverter
 
 See blog https://blog.philipphauer.de/kotlin-practice-spring-boot-vaadin/
  for Kotlin, Spring Boot, Vaadin
@@ -119,7 +119,6 @@ see Destructuring.kt
 
 ## Ad-Hoc creation of Structs
 
-listOf, mapOf and the infix function to can be used to create structs (like JSON) quite concisely. Well, it’s still not as compact as in Python or JavaScript, but way better than in Java.
+listOf, mapOf and the infix function to can be used to create structs (like JSON) quite concisely. Well, it's still not as compact as in Python or JavaScript, but way better than in Java.
 
 see Structs.kt
-

@@ -16,7 +16,7 @@ fun blub(){
 
 // The extension function apply() helps to group and centralize
 // initialization code for an object.
-// Besides, we don’t have to repeat the variable name over and over again.
+// Besides, we don't have to repeat the variable name over and over again.
 
 // Do this instead
 val dataSource = BasicDataSource().apply {
