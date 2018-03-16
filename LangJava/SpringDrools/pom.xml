@@ -44,23 +44,19 @@
 			<version>${drools-version}</version>
 		</dependency>
 
+		<!--spring integration-->
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>${apache-poi-version}</version>
+			<groupId>org.kie</groupId>
+			<artifactId>kie-spring</artifactId>
+			<version>${drools-version}</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>${apache-poi-version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework</groupId>
-			<artifactId>spring-core</artifactId>
+			<artifactId>spring-test</artifactId>
 			<version>${spring.version}</version>
+			<scope>test</scope>
 		</dependency>
-
+        
 		<!-- test -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -113,7 +109,25 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+				<execution>
+				<goals>
+					<goal>repackage</goal>
+				</goals>
+				<configuration>
+					<classifier>spring-boot</classifier>
+					<mainClass>
+						t.drools.app.ApplicationRunner
+					</mainClass>
+				</configuration>
+				</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 	</build>
-
 </project>
