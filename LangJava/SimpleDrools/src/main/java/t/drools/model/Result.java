@@ -6,7 +6,7 @@ import java.util.List;
 public class Result {
 
     private String value;
-    private List<String> facts = new ArrayList<String>();
+    private List<String> facts = new ArrayList<>();
 
     public String getValue() {
         return value;
