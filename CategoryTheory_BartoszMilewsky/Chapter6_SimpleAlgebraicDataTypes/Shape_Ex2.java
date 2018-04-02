@@ -25,7 +25,8 @@ class Circle implements IShape {
 	private int r;
 
 	public String area() {
-		String r = "Area of Circle = PI * " + r + " * " + r;
+		String rv = "Area of Circle = PI * " + r + " * " + r;
+		return rv;
 	}
 }
 
@@ -39,7 +40,8 @@ class Rect implements IShape {
 	private int d, h;
 
 	public String area() {
-		String r = "Area of Rect = " + d + " * " + h;
+		String rv = "Area of Rect = " + d + " * " + h;
+		return rv;
 	}
 }
 
