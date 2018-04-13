@@ -1,0 +1,26 @@
+
+4. Is the world-wide web a category in any sense? Are links morphisms?
+
+	1. Web Pages link to other web pages
+	2. However do not compose, A -> B AND B -> C, does not mean there is a direct link between A -> C
+	2. Web Pages can link to itself, however not sure if all web pages have a self link
+	So, NO
+
+	However, specialized software / humans can create virtual links that compose.
+
+5. Is Facebook a category, with people as objects and friendships as morphisms?
+
+	1. A ---friend--> B
+	2. friendships do not compose, A -> B AND B -> C does not mean A -> C
+	2. A cannot be friends with self, hence no identity morphism
+	So, NO
+
+	special friend-of-friends morphism can get around the do not compose restriction.
+
+6. When is a directed graph a category?
+
+	directed graph implies, arrow(edge) between 2 objects(nodes)
+
+	Conditions to be met for directed graph to be a Category:
+	1. if arrows compose, A -> B AND B -> C => A -> C is present
+	2. if arrow between self to self exists for every object

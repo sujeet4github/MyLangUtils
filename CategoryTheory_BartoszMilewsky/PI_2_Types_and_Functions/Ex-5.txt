@@ -1,0 +1,25 @@
+Draw a picture of a category whose only objects are the types Void, () (unit), and Bool;
+with arrows corresponding to all possible functions between these types.
+Label the arrows with the names of the functions.
+
+
+1. Void --id--> Void	#Rule 3
+2. ()   --id--> ()	#Rule 3
+3. Bool --id--> Bool	#Rule 3
+
+4. Void -absurd-> ()	# cannot be called, but can be defined
+5. Void -absurd-> Bool	# cannot be called, but can be defined
+
+NOTE: 6-7 Come about because I have peeked inside Bool
+6. Bool --not---> Bool	# distinct from id, complement, True -> False and False -> True
+7. Bool --true--> Bool	# distinct from id, always true, _ -> True
+8. Bool --false-> Bool	# distinct from id, always false, _ -> False
+
+9. Bool -undefined-> Void
+10. Bool --unit-> ()	# unit function, throws away argument and does nothing
+
+NOTE: 10,11 come about because I have peeked and know that Bool has 2 values, else just one arrow
+10. ()  --true--> Bool	# always true, _ -> True
+11. ()  --false-> Bool	# always false, _ -> False
+
+12. () -undefined-> Void

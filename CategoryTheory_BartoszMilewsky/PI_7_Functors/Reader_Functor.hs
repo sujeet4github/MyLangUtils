@@ -20,17 +20,5 @@
 instance Functor ((->) r) where
     fmap = (.)
 
-// This combination of the type constructor (->) r with the above implementation of fmap is called the reader functor.
-
-// Challenge 2: Prove functor laws for the reader functor. Hint: it’s really simple.
-//  ... 1. preserves identity
-//  fmap id f
-//     = id . f
-//     = f
-//  fmap f id
-//     = f . id
-//     = f
-//  ... 2. preserves composition
-//  fmap g f
-//     = g . f
-
+// This combination of the type constructor (->) r with the above implementation of fmap
+// is called the *reader* functor.
