@@ -13,7 +13,7 @@ Show that PreList is an instance of Bifunctor.
 -}
 
 data PreList a b = Nil | Cons a b
-   deriving (Show)
+   deriving (Eq, Show)
 
 -- A bifunctor is a type constructor that takes two type arguments.
 -- try to make PreList a bifunctor
@@ -33,3 +33,11 @@ instance Bifunctor PreList where
    second = bimap id
    -- second2 f (PreList a b) = PreList a (f b)
    -- second2 f Nil           = Nil
+
+main :: IO ()
+main = do
+    -- Checking the Functor laws.
+    --print $ bimap id id Nil        == Nil
+    print $ bimap id id (Cons 1 2) == Cons 1 2
+    print $ ((bimap (+ 1) (* 2)) . (bimap (+ 2) (* 3))) Nil        == bimap ((+ 1) . (+ 2)) ((* 2) . (* 3)) Nil
+    print $ ((bimap (+ 1) (* 2)) . (bimap (+ 2) (* 3))) (Cons 1 2) == bimap ((+ 1) . (+ 2)) ((* 2) . (* 3)) (Cons 1 2)

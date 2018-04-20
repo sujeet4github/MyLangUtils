@@ -4,7 +4,8 @@
 // A bifunctor is a type constructor that takes two type arguments.
 //
 
-// Here’s the definition of the Bifunctor typeclass taken directly from the library Control.Bifunctor:
+// Here’s the definition of the Bifunctor typeclass taken directly from the
+// library Control.Bifunctor:
 //
 class Bifunctor f where
     bimap :: (a -> c) -> (b -> d) -> f a b -> f c d
@@ -26,8 +27,8 @@ class Bifunctor f where
 //
 // See Diagram: https://bartoszmilewski.files.wordpress.com/2015/01/bimap.jpg
 
-// The two other type signatures, first and second, are the two fmaps
-// witnessing the functoriality of f in the first and the second argument, respectively.
+// bimap can be defined in terms of first and second, each of which lift a function
+// from each argument of the bifunctor.
 //
 // See Diagram: https://bartoszmilewski.files.wordpress.com/2015/01/first.jpg and second.jpg
 

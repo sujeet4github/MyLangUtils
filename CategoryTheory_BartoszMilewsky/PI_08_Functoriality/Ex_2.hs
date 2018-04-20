@@ -1,5 +1,7 @@
-import Data.Functor.Const
-import Control.Monad.Identity
+import Control.Applicative   (Const (..))
+import Data.Functor.Identity (Identity (..))
+-- import Data.Functor.Const
+-- import Control.Monad.Identity
 
 -- Ex Show the isomorphism between the standard definition of Maybe and this desugaring:
 -- type Maybe' a = Either (Const () a) (Identity a)
@@ -9,11 +11,11 @@ import Control.Monad.Identity
 type Maybe2 a = Either (Const () a) (Identity a)
 
 maybeToMaybe2 :: Maybe a -> Maybe2 a
-maybeToMaybe2 Nothing  = Left (Const Nothing) -- this doesnot compile ??? 
+maybeToMaybe2 Nothing  = Left (Const ()) -- this doesnot compile ??? - Left (Const Nothing)
 maybeToMaybe2 (Just x) = Right (Identity x)
 
 maybe2ToMaybe :: Maybe2 a -> Maybe a
-maybe2ToMaybe (Left (Const ()))     = Nothing
+maybe2ToMaybe (Left  _)             = Nothing
 maybe2ToMaybe (Right (Identity x))  = Just x
 
 {-
@@ -36,3 +38,13 @@ maybe2ToMaybe (Right x)
    = Just x                         -- apply def
 
 -}
+
+
+main :: IO ()
+main = do
+    print $ (maybe2ToMaybe . maybeToMaybe2) Nothing              == Nothing
+    print $ (maybe2ToMaybe . maybeToMaybe2) (Just 1)             == Just 1
+    print $ (maybeToMaybe2 . maybe2ToMaybe) (Left (Const ()))    == Left (Const ())
+    print $ (maybeToMaybe2 . maybe2ToMaybe) (Right (Identity 1)) == Right (Identity 1)
+
+--main
