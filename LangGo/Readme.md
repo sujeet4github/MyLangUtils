@@ -1,4 +1,6 @@
-1. Go Setup
+1. folder: test_install
+	Go Setup Test - Hello.go - hello world print as described in:
+	https://golang.org/doc/install?download=go1.11.4.windows-386.zip
 
 2. REST api in Go. MongoDB interaction in Go.
 https://dzone.com/articles/build-restful-api-in-go-and-mongodb?edition=347131&utm_source=Zone%20Newsletter&utm_medium=email&utm_campaign=integration%202017-12-28
