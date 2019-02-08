@@ -38,12 +38,16 @@ class HelloTest {
         // The zipWhen then combines the two Mono streams into a tuple
         //  
         val organization : Mono<Organization> = getOrganizationByName("test")
+                .log()
                 .zipWhen { organization ->
-                    getEmployeesByOrganization(organization.id!!).collectList()
+                    getEmployeesByOrganization(organization.id!!)
+                    .log()
+                    .collectList()
                         // collectList converts Flux<Employee> into Mono<MutableList<Employee>>
                 }
                 // Above zipWhen results in a tuple of 1. Mono<> and 2. Mono<MutableList<Employee>>
                 .map { tuple -> Organization(tuple.t1.id, tuple.t1.name, tuple.t2) }
+                .log()
 
         val org = organization.block()
         Assert.assertEquals("test", org.name)
@@ -62,6 +66,7 @@ class HelloTest {
         // Get a list of all employees and add it to a Organization entity.
 
         var organization: Mono<Organization> = getDepartmentsByOrganization(1)
+//                .log()
                 .flatMapIterable { department -> department.employees }
                 .collectList()
                 .map { t -> Organization(1, "X", t) }
