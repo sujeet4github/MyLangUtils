@@ -12,4 +12,9 @@ class Organization(var id: Int, var name: String) {
     constructor(id: Int, name: String, employees: MutableList<Employee>) : this(id, name){
         this.employees.addAll(employees)
     }
+
+    override fun toString(): String{
+		val address2Str = "Organization {id = ${id}, name = ${name}, e = ${employees.joinToString()}, d = ${departments.joinToString()} }"
+		return address2Str
+	}
 }
