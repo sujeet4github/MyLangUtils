@@ -9,6 +9,15 @@ class HelloTest {
 
     @Test
     fun testScenario3() {
+        // We have two API methods that emits Flux with the same object types.
+        // First of them contains list of employees having id, name, salary properties,
+        // while the second id, organizationId, departmentId properties.
+        // 
+        // We want to convert it into a single stream emitting employees with full set of properties
+        //
+        // NOTE: Note these work because these are ordered - employee 1 comes first in both the streams etc
+        // and zipWith is not like a SQL join: {1, 2} zipWith {a, b} = {(1, a), (2, b)}
+
         val employees : Flux<Employee> = getEmployeesBasic()
                 .zipWith(getEmployeesRelationships())
                 .map { t -> Employee(t.t1.id, t.t1.name, t.t1.salary, t.t2.organizationId!!, t.t2.departmentId!!) }
@@ -16,11 +25,24 @@ class HelloTest {
     }
 
     @Test
-    fun testScenario1() {
+    fun testScenario1 () {
+
+        // return the single stream emitting organization that contains list of employees as shown below.
+        // Organization(id=1) {
+        //     Employee(id=1),
+        //     Employee(id=2),
+        // }
+        //
+        // getOrganizationByName returns a Mono.
+        // The zipWhen waits for result from this Mono and then calls collectList (on getEmployeesByOrganization).
+        // The zipWhen then combines the two Mono streams into a tuple
+        //  
         val organization : Mono<Organization> = getOrganizationByName("test")
                 .zipWhen { organization ->
                     getEmployeesByOrganization(organization.id!!).collectList()
+                        // collectList converts Flux<Employee> into Mono<MutableList<Employee>>
                 }
+                // Above zipWhen results in a tuple of 1. Mono<> and 2. Mono<MutableList<Employee>>
                 .map { tuple -> Organization(tuple.t1.id, tuple.t1.name, tuple.t2) }
 
         val org = organization.block()
@@ -33,6 +55,12 @@ class HelloTest {
 
     @Test
     fun testScenario5() {
+        // We have a single input stream Mono<Organization> that contains list of departments.
+        //  Each of department inside that list also contains the list of all employees
+        //  assigned to the given department
+        //
+        // Get a list of all employees and add it to a Organization entity.
+
         var organization: Mono<Organization> = getDepartmentsByOrganization(1)
                 .flatMapIterable { department -> department.employees }
                 .collectList()
@@ -46,6 +74,9 @@ class HelloTest {
 
     @Test
     fun testScenario4() {
+        // In this scenario we have two independent Flux stream that emit the same type of objects – Employee.
+        // We would like to merge those two stream into a single stream ordered by id
+
         val persons: Flux<Employee> = getEmployeesFirstPart()
                 .mergeOrderedWith(getEmployeesSecondPart(), Comparator { o1, o2 -> o1.id.compareTo(o2.id) })
                 .map {
@@ -58,6 +89,22 @@ class HelloTest {
 
     @Test
     fun testScenario2() {
+        // Now, we have to Flux streams that emits
+        // 1. employees - getEmployees
+        // and 2. departments - getDepartments
+        //
+        // Every employee has property departmentId responsible for assignment to the department.
+        //
+        // The goal is to merge those two streams and return the single Flux stream emitting
+        // departments that contains all employees assigned to the given department.
+        //
+
+        // We can do it in 2 ways
+
+        // Approach 1
+        //  1 .flatMap function on stream with departments.
+        //    1. zip every single Department with stream of employees filtered by departmentId and converted into Mono type.
+        //    2. Finally, we are creating Mono type using map function that emits department containing list of employees.
         val departments: Flux<Department> = getDepartments()
                 .flatMap { department ->
                     Mono.just(department)
@@ -68,6 +115,9 @@ class HelloTest {
             Assert.assertEquals(2, it.employees.size)
         }
 
+        // Approach 2
+        // 1. group employees by departmentId
+        // 2. zip with this list the departments
         val departments2: Flux<Department> = getEmployees()
                 .groupBy { it.departmentId }
                 .flatMap { t -> getDepartments().filter { it.id == t.key() }.elementAt(0)
