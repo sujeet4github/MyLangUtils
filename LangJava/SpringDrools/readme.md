@@ -1,6 +1,10 @@
 Drools Tutorial
 ===============
 
+** UPDATED by spring.boot.drools project
+
+This is deprecated....
+
 To run:
 	mvn clean -Dtest=**IntegrationTest test
 	OR
@@ -25,3 +29,4 @@ The KieBase can be obtained from the KieContainer.
 KieSession is created using KieContainer instance.
 A KieSession instance is a place where input data can be inserted.
 The KieSession interacts with the engine to process the actual business logic defined in rule based on inserted Facts.
+
