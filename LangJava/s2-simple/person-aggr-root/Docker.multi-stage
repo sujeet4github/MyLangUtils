@@ -1,0 +1,24 @@
+FROM openjdk:8-jdk-alpine as build
+WORKDIR /workspace/app
+
+# The first image is labeled "build" and it is used to run Maven and build the fat jar, then unpack it.
+
+# Notice here that the following layers:
+# the earlier ones contain the maven wrapper and the later ones the actual source
+# this is a small optimization
+COPY mvnw .
+COPY .mvn .mvn
+COPY pom.xml .
+COPY src src
+
+RUN ./mvnw install -DskipTests
+RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
+
+# The final stage (same as regular Dockerfile)
+FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG DEPENDENCY=/workspace/app/target/dependency
+COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
+COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
+COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
+ENTRYPOINT ["java","-cp","app:app/lib/*","t.learn.spring.boot.min.Application"]

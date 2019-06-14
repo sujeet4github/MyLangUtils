@@ -1,0 +1,9 @@
+// {{start:dependencies}}
+dependencies {
+    compile libs.undertowCore
+    compile libs.slf4j
+    compile libs.logback
+
+    testCompile libs.junit
+}
+// {{end:dependencies}}

@@ -1,0 +1,272 @@
+[ {
+  "id" : "14025222",
+  "typeCode" : "CT5",
+  "creationDate" : "2014-10-23T06:00:00Z",
+  "members" : [ {
+    "id" : "090767636",
+    "name" : "ROBBIN TRACY",
+    "dateOfBirth" : "1979-04-20",
+    "dateOfDeath" : null,
+    "startDate" : "2014-10-01",
+    "endDate" : null
+  }, {
+    "id" : "020767637",
+    "name" : "SHILA K TRACY",
+    "dateOfBirth" : "2000-04-06",
+    "dateOfDeath" : null,
+    "startDate" : "2014-10-22",
+    "endDate" : null
+  }, {
+    "id" : "070796236",
+    "name" : "BOBBYLEE SWIFT",
+    "dateOfBirth" : "2006-02-22",
+    "dateOfDeath" : null,
+    "startDate" : "2014-10-22",
+    "endDate" : null
+  }, {
+    "id" : "021005929",
+    "name" : "ALEXANDRIA SWIFT",
+    "dateOfBirth" : "2008-09-22",
+    "dateOfDeath" : null,
+    "startDate" : "2014-10-01",
+    "endDate" : null
+  }, {
+    "id" : "081062933",
+    "name" : "DAVAD JAMES SWIFT",
+    "dateOfBirth" : "2011-06-13",
+    "dateOfDeath" : null,
+    "startDate" : "2014-10-01",
+    "endDate" : null
+  }, {
+    "id" : "090767636",
+    "name" : "ROBBIN TRACY",
+    "dateOfBirth" : "1979-04-20",
+    "dateOfDeath" : null,
+    "startDate" : "2016-02-02",
+    "endDate" : null
+  }, {
+    "id" : "070796236",
+    "name" : "BOBBYLEE SWIFT",
+    "dateOfBirth" : "2006-02-22",
+    "dateOfDeath" : null,
+    "startDate" : "2016-02-02",
+    "endDate" : null
+  }, {
+    "id" : "021005929",
+    "name" : "ALEXANDRIA SWIFT",
+    "dateOfBirth" : "2008-09-22",
+    "dateOfDeath" : null,
+    "startDate" : "2016-02-02",
+    "endDate" : null
+  }, {
+    "id" : "081062933",
+    "name" : "DAVAD JAMES SWIFT",
+    "dateOfBirth" : "2011-06-13",
+    "dateOfDeath" : null,
+    "startDate" : "2016-02-02",
+    "endDate" : null
+  }, {
+    "id" : "090767636",
+    "name" : "ROBBIN TRACY",
+    "dateOfBirth" : "1979-04-20",
+    "dateOfDeath" : null,
+    "startDate" : "2017-03-10",
+    "endDate" : null
+  }, {
+    "id" : "020767637",
+    "name" : "SHILA K TRACY",
+    "dateOfBirth" : "2000-04-06",
+    "dateOfDeath" : null,
+    "startDate" : "2016-02-02",
+    "endDate" : "2018-04-06"
+  } ],
+  "relations" : [ {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "020767637",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "070796236",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "021005929",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "020767637",
+    "otherMemberId" : "070796236",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "020767637",
+    "otherMemberId" : "021005929",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "070796236",
+    "otherMemberId" : "021005929",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "081062933",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-10-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "081148616",
+    "otherMemberId" : "071148617",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "081148616",
+    "otherMemberId" : "021148618",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "081148616",
+    "otherMemberId" : "041148618",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "071148617",
+    "otherMemberId" : "021148618",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  } ]
+}, {
+  "id" : "14357781",
+  "typeCode" : "CT5",
+  "creationDate" : "2015-01-20T07:00:00Z",
+  "members" : [ {
+    "id" : "081148616",
+    "name" : "KHADRO OBSIIYE SAEED",
+    "dateOfBirth" : "1976-01-01",
+    "dateOfDeath" : null,
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "id" : "071148617",
+    "name" : "MARWO AHMED IBRAHIM",
+    "dateOfBirth" : "2003-01-01",
+    "dateOfDeath" : null,
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "id" : "021148618",
+    "name" : "DEGEN AHMED IBRAHIM",
+    "dateOfBirth" : "2005-01-01",
+    "dateOfDeath" : null,
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "id" : "041148618",
+    "name" : "ABDALLAH AHMED IBRAHIM",
+    "dateOfBirth" : "2007-01-01",
+    "dateOfDeath" : null,
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  } ],
+  "relations" : [ {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "020767637",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "070796236",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "021005929",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "020767637",
+    "otherMemberId" : "070796236",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "020767637",
+    "otherMemberId" : "021005929",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "070796236",
+    "otherMemberId" : "021005929",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2010-02-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "090767636",
+    "otherMemberId" : "081062933",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2010-10-01",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "081148616",
+    "otherMemberId" : "071148617",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "081148616",
+    "otherMemberId" : "021148618",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "081148616",
+    "otherMemberId" : "041148618",
+    "relationOneToOther" : "Parent",
+    "relationReverse" : "Child",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  }, {
+    "oneMemberId" : "071148617",
+    "otherMemberId" : "021148618",
+    "relationOneToOther" : "Sibling",
+    "relationReverse" : "Sibling",
+    "startDate" : "2015-01-20",
+    "endDate" : null
+  } ]
+} ]

@@ -1,0 +1,46 @@
+version: '2'
+services:
+  elasticsearch:
+    # Use default ES container - no need for a separate Dockerfile
+    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.1
+    restart: always
+    container_name: example_elasticsearch
+    environment:
+      - node.name=example
+      - cluster.name=example-cluster
+      - http.port=9200
+      - transport.tcp.port=9300
+      - discovery.zen.minimum_master_nodes=1
+      - discovery.type=single-node
+      - http.cors.enabled=true
+      - node.data=true
+      - node.master=true
+      - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    volumes:
+      - example_esdata:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+  mysql:
+    # See mysql/Dockerfile
+    build: mysql
+    restart: always
+    container_name: example_mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "3306:3306"
+    volumes:
+      - example_mysql:/var/lib/mysql
+
+volumes:
+  example_esdata:
+    driver: local
+  example_mysql:
+    driver: local

@@ -1,0 +1,24 @@
+plugins {
+	// The Application plugin allows you to bundle all of your applications JARs as well as all
+	// of their transitive dependencies into a single ZIP or TAR file.
+	// It will also add two startup scripts (one for UNIX-like operations systems and one for Windows)
+	// to the archive to make it easy for your users to run your application.
+	id 'application' 
+}
+
+dependencies {
+    compile project(':common') 
+}
+
+mainClassName = 'ex.undertow.routing.RoutingServer'
+
+distZip {
+    from project(':docs').asciidoctor, { 
+        into "${project.name}-${version}"
+    }
+}
+distTar {
+    from project(':docs').asciidoctor, {
+        into "${project.name}-${version}"
+    }
+}

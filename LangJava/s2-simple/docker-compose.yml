@@ -1,0 +1,20 @@
+version: '3'
+services:
+  app:
+    image: springio/persons:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+  postgres:
+    build: postgres/
+    volumes:
+      - pg-db-data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+volumes:
+  # docker volume create --name pg-db-data -d local
+  pg-db-data:
+    external: true
