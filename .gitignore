@@ -3,3 +3,4 @@
 .vscode/
 .gradle/
 .settings
+.DS_Store
