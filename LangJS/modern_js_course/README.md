@@ -4,6 +4,8 @@ Tools:
 Bootstrap.js
 
 fontawesome.com
+place holder images: placeholder.com
+
 
 Online Regex checker: https://regex101.com/
 
