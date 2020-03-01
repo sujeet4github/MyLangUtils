@@ -12,3 +12,7 @@
 	https://www.stubbornjava.com/posts/creating-a-local-development-environment-with-docker-compose
 	
 	docker-compose up
+
+3. LaTex
+	https://gordonlesti.com/building-a-latex-docker-image/
+	
