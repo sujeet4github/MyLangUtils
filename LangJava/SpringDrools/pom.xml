@@ -14,7 +14,7 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<http-component-version>4.4.6</http-component-version>
-		<drools-version>7.6.0.Final</drools-version>
+		<drools-version>7.60.0.Final</drools-version>
 		<apache-poi-version>3.13</apache-poi-version>
 		<maven-surefire-plugin.version>2.21.0</maven-surefire-plugin.version>
 		<junit.version>4.13.1</junit.version>
