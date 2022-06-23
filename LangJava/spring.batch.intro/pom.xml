@@ -18,7 +18,7 @@
 		<maven.compiler.source>12</maven.compiler.source>
 		<maven.compiler.target>12</maven.compiler.target>
 		<spring.version>5.1.7.RELEASE</spring.version>
-		<spring.batch.version>4.1.2.RELEASE</spring.batch.version>
+		<spring.batch.version>4.2.3.RELEASE</spring.batch.version>
 		<sqlite.version>3.27.2</sqlite.version>
 		<slf4j.version>1.7.26</slf4j.version>
 		<logback.version>1.2.3</logback.version>
